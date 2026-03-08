@@ -4,7 +4,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from typing import Optional
 from chess_tournament import Player
 
-MODEL_NAME = "your-username/chess-gpt2"
+MODEL_NAME = "alisonlia/chess-gpt2"
 
 class TransformerPlayer(Player):
 
@@ -26,7 +26,6 @@ class TransformerPlayer(Player):
 
         move = self._try_generate(fen)
 
-        #if the model outputs something illegal just score all legal moves instead
         if move and self._check_legal(move, board):
             return move
 
